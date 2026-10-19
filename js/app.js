@@ -1,4 +1,4 @@
-// TAG [CONFIG]: API DummyJSON & Kurs Rupiah
+// [CONFIG]: API DummyJSON & Kurs Rupiah
 const API_URL = 'https://dummyjson.com/products?limit=20';
 const KURS_RUPIAH = 16000;
 
