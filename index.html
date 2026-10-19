@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapak Jersey UMKM Tarakan - Dashboard Produk</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- TAG [HEADER]: Navigasi & Identitas Mahasiswa -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="brand-area">
+                <h1 class="app-title">Lapak Jersey UMKM Tarakan</h1>
+                <p class="student-info">Muhammad Bintang Prasetya | NPM: 2440304023</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#analisis">Analisis Data</a>
+                <a href="#katalog">Katalog Jersey</a>
+                <a href="#form-preferensi">Form Preferensi</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- TAG [ANALISIS DATA WAJIB]: Statistik Otomatis Berbasis Rupiah -->
+        <section id="analisis" class="content-section">
+            <h2>Statistik & Analisis Katalog Jersey UMKM</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Jersey Dimuat</h3>
+                    <p id="stat-total-produk" class="stat-value">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Rata-rata Harga Jersey</h3>
+                    <p id="stat-rata-harga" class="stat-value">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Jersey Termahal</h3>
+                    <p id="stat-produk-termahal" class="stat-value">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Jumlah Kategori Unik</h3>
+                    <p id="stat-total-kategori" class="stat-value">-</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAG [AREA UTAMA]: Katalog Produk, Loading, Error, & Toolbar -->
+        <section id="katalog" class="content-section">
+            <div class="section-header">
+                <h2>Katalog Jersey Klub Top Eropa (Stok UMKM)</h2>
+                <!-- TAG [CHALLENGE C=1]: Timestamp Terakhir Dimuat -->
+                <p id="last-loaded-info" class="timestamp-badge">Waktu Muat: Belum dimuat</p>
+            </div>
+
+            <!-- Toolbar Filter Favorit (Digit Y=2) -->
+            <div class="toolbar">
+                <div class="filter-group">
+                    <button id="btn-filter-all" class="btn-filter active">Semua Jersey</button>
+                    <button id="btn-filter-fav" class="btn-filter">★ Favorit Saya (<span id="fav-count">0</span>)</button>
+                </div>
+                <div class="simulation-group">
+                    <button id="btn-simulasi-error" class="btn-action danger">Simulasi Network Error</button>
+                </div>
+            </div>
+
+            <!-- TAG [UI STATE]: Loading State -->
+            <div id="loading-spinner" class="state-box" style="display: none;">
+                <div class="spinner"></div>
+                <p>Memuat katalog jersey dari REST API DummyJSON...</p>
+            </div>
+
+            <!-- TAG [UI STATE & CHALLENGE C=1]: Error State & Tombol Retry -->
+            <div id="error-box" class="state-box error-theme" style="display: none;">
+                <p id="error-message">Terjadi kesalahan saat mengambil data server.</p>
+                <button id="btn-retry" class="btn-retry">Coba Lagi (Retry Fetch)</button>
+            </div>
+
+            <!-- Container Render DOM Kartu Jersey -->
+            <div id="product-list" class="cards-grid"></div>
+        </section>
+
+        <!-- TAG [FORM & VALIDASI Z=3]: Validasi Minimal 1 Kategori Dipilih -->
+        <section id="form-preferensi" class="content-section">
+            <h2>Survei Minat Jersey Klub Eropa</h2>
+            <p class="section-desc">Pilihlah minimal 1 liga/kategori jersey yang paling Anda minati untuk stok UMKM berikutnya.</p>
+
+            <form id="preference-form" class="form-container" novalidate>
+                <div class="form-group">
+                    <label class="form-label">Nama Lengkap Pelanggan *</label>
+                    <input type="text" id="input-nama" class="form-input" placeholder="Masukkan nama Anda..." required>
+                    <small id="error-nama" class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Pilih Liga Minat Anda * (Minimal Pilih 1):</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="kategori_preferensi" value="Premier League (Inggris)"> Premier League (MU, City, Arsenal, Liverpool)
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="kategori_preferensi" value="La Liga (Spanyol)"> La Liga (Real Madrid, Barcelona, Atletico)
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="kategori_preferensi" value="Serie A (Italia)"> Serie A (AC Milan, Inter, Juventus)
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="kategori_preferensi" value="Bundesliga / Ligue 1"> Bundesliga / Ligue 1 (Bayern, PSG)
+                        </label>
+                    </div>
+                    <small id="error-kategori" class="error-msg"></small>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Preferensi</button>
+                <div id="form-success-box" class="success-box" style="display: none;"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- TAG [FOOTER]: Identitas Mahasiswa -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 PTS Pemrograman Web | Muhammad Bintang Prasetya (NPM: 2440304023) - Teknik Komputer UBT</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
