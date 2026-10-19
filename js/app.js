@@ -96,7 +96,7 @@ async function fetchProducts() {
         // Analisis Data Wajib
         hitungAnalisisData(allProducts);
 
-        // Render Kartu ke DOM
+        // Render ke DOM
         renderProducts();
 
     } catch (error) {
