@@ -152,7 +152,7 @@ function updateFavBadgeCount() {
     favCountSpan.textContent = favorites.length;
 }
 
-// TAG [DOM RENDER]: Menampilkan Kartu Produk
+// [DOM RENDER]: Menampilkan Kartu Produk
 function renderProducts() {
     productList.replaceChildren();
     const favorites = getFavoritesFromStorage();
@@ -239,7 +239,7 @@ btnFilterFav.addEventListener('click', () => {
     renderProducts();
 });
 
-// TAG [VALIDASI FORM Z=3]: Minimal 1 Checkbox Kategori Dipilih
+// [VALIDASI FORM Z=3]: Minimal 1 Checkbox Kategori Dipilih
 const preferenceForm = document.querySelector('#preference-form');
 const inputNama = document.querySelector('#input-nama');
 const errorNama = document.querySelector('#error-nama');
