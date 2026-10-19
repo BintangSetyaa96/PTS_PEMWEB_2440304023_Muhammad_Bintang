@@ -60,7 +60,7 @@ function formatRupiah(jumlah) {
     }).format(jumlah);
 }
 
-// TAG [FETCH API]: Async/Await dari DummyJSON + Custom Local Images Mapping
+// [FETCH API]: Async/Await dari DummyJSON + Custom Local Images Mapping
 async function fetchProducts() {
     loadingSpinner.style.display = 'block';
     errorBox.style.display = 'none';
