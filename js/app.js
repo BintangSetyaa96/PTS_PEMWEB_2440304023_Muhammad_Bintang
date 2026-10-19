@@ -96,7 +96,7 @@ async function fetchProducts() {
         // Analisis Data Wajib
         hitungAnalisisData(allProducts);
 
-        // Render ke DOM
+        // Render kartu ke DOM
         renderProducts();
 
     } catch (error) {
@@ -126,7 +126,7 @@ function hitungAnalisisData(products) {
     statTotalKategori.textContent = `${kategoriSet.size} Liga`;
 }
 
-// TAG [LOCALSTORAGE]: Menyimpan Favorit (Digit Y=2)
+// [LOCALSTORAGE]: Menyimpan Favorit (Digit Y=2)
 function getFavoritesFromStorage() {
     return JSON.parse(localStorage.getItem('umkm_jersey_favorites')) || [];
 }
